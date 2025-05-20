@@ -4,7 +4,7 @@ A simple, fast, and serverless URL Shortener built using AWS.
 
 ## 🌐 Live Demo
 
-👉 [Try it here](https://YOUR_S3_WEBSITE_URL)
+👉 [Try it here](http://ayush-url-shortener-frontend-767.s3-website-us-west-1.amazonaws.com)
 
 ## 🚀 Tech Stack
 
@@ -76,9 +76,9 @@ If the URL has expired, it will return an error.
 
 Try these long URLs to see shortening in action:
 
+- https://assets.aboutamazon.com/dims4/default/dd7f211/2147483647/strip/false/crop/960x720+0+0/resize/960x720!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F66%2Ff3%2Fcb7e8e804a1f991c96593cf465e1%2Faws-logo-white-on-si.jpg
 - https://www.example.com/articles/2025/05/how-to-host-aws-s3-static-site-with-cloudfront-and-ssl
-- https://en.wikipedia.org/wiki/Internationalization_and_localization
-- https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
 
 ## ℹ️ Disclaimer
 
@@ -86,5 +86,6 @@ Try these long URLs to see shortening in action:
 
 ## 👨‍💻 Author
 
-Made with devotion and dedication by **Ayush Gupta**  
+Made by **Ayush Gupta**  
 GitHub: [i-ayushh](https://github.com/i-ayushh)
+Linkedin: [ayushgupta767](https://www.linkedin.com/in/ayushgupta767/)
