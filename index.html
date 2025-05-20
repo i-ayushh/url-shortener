@@ -24,7 +24,7 @@
       }
 
       try {
-        const res = await fetch("https://9j28hf081m.execute-api.us-west-1.amazonaws.com/shorten", {
+        const res = await fetch("https://your-api-gateway-url/shorten/{code}", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
