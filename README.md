@@ -2,10 +2,6 @@
 
 A simple, fast, and serverless URL Shortener built using AWS.
 
-## 🌐 Live Demo
-
-👉 [Try it here](http://ayush-url-shortener-frontend-767.s3-website-us-west-1.amazonaws.com)
-
 ## 🚀 Tech Stack
 
 - **Frontend**: HTML + JavaScript hosted on AWS S3
