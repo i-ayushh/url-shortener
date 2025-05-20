@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ayush's URL Shortener</title>
+  <script>
+    async function shortenURL(event) {
+      event.preventDefault();
+      const input = document.getElementById("urlInput").value.trim();
+      const customCode = document.getElementById("customCode").value.trim();
+      const expiryDate = document.getElementById("expiryDate").value;
+      const result = document.getElementById("result");
+      result.innerText = "Shortening...";
+
+      const payload = { url: input };
+
+      if (customCode) {
+        payload.custom_code = customCode;
+      }
+
+      if (expiryDate) {
+        // Convert expiryDate (YYYY-MM-DD) to UNIX timestamp in seconds
+        const expiryTimestamp = Math.floor(new Date(expiryDate).getTime() / 1000);
+        payload.expiry = expiryTimestamp;
+      }
+
+      try {
+        const res = await fetch("https://9j28hf081m.execute-api.us-west-1.amazonaws.com/shorten", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (res.status === 200) {
+          result.innerHTML = `Short URL: <a href="${data.short_url}" target="_blank">${data.short_url}</a>`;
+        } else {
+          result.innerText = "Error: " + (data.error || "Unknown error");
+        }
+      } catch (error) {
+        result.innerText = "Request failed: " + error.message;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Ayush's URL Shortener</h1>
+  <form onsubmit="shortenURL(event)">
+    <input type="text" id="urlInput" placeholder="Enter long URL" size="50" required><br><br>
+
+    <input type="text" id="customCode" placeholder="Custom short code (optional)" size="30"><br><br>
+
+    <label for="expiryDate">Expiry date (optional): </label>
+    <input type="date" id="expiryDate"><br><br>
+
+    <button type="submit">Shorten</button>
+  </form>
+  <p id="result"></p>
+</body>
+</html>
